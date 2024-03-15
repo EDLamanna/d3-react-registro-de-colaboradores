@@ -1,0 +1,44 @@
+.title {
+  font-size: 35px;
+  text-align: center;
+}
+
+.errorBox {
+  background-color: rgba(243, 30, 30, 0.155);
+  width: 300px;
+  height: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  border: 0.5px solid rgba(255, 0, 0, 0.422);
+}
+
+.errorText {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+}
+
+.successBox {
+  background-color: rgba(87, 243, 30, 0.155);
+  width: 300px;
+  height: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  border: 0.5px solid rgba(4, 255, 0, 0.422);
+}
+
+.successText {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+}
+
+.encabezado {
+  margin-bottom: 20px;
+}

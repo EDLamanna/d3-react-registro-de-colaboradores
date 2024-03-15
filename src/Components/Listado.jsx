@@ -1,35 +1,41 @@
-import { useState } from "react";
-import Table from "react-bootstrap/Table";
-import { BaseColaboradores } from "../BaseColaboradores";
+import React from 'react';
+import Table from 'react-bootstrap/Table';
 
-function Listado() {
-  const [colaboradores, setColaboradores] = useState(BaseColaboradores);
-  // const [colaborador, setColaborador] = useStatue("")
+const Listado = ({ colaboradores, eliminarColaborador }) => {
+  const handleEliminar = (id) => {
+    eliminarColaborador(id);
+  };
 
   return (
-    <Table striped bordered hover size="sm" className="mt-4">
-      <thead>
-        <tr>
-          <th>Nombre</th>
-          <th>Correo</th>
-          <th>Edad</th>
-          <th>Cargo</th>
-          <th>Teléfono</th>
-        </tr>
-      </thead>
-      <tbody>
-        {colaboradores.map((colaborador) => (
-          <tr key={colaborador.id}>
-            <td>{colaborador.nombre}</td>
-            <td>{colaborador.correo}</td>
-            <td>{colaborador.edad}</td>
-            <td>{colaborador.cargo}</td>
-            <td>{colaborador.telefono}</td>
+    <div className="colaboradores">
+      <Table striped bordered hover size="sm">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Edad</th>
+            <th>Cargo</th>
+            <th>Teléfono</th>
+            <th>Eliminar</th>
           </tr>
-        ))}
-      </tbody>
-    </Table>
+        </thead>
+        <tbody>
+          {colaboradores.map((colaborador) => (
+            <tr key={colaborador.id}>
+              <td>{colaborador.nombre}</td>
+              <td>{colaborador.correo}</td>
+              <td>{colaborador.edad}</td>
+              <td>{colaborador.cargo}</td>
+              <td>{colaborador.telefono}</td>
+              <td>
+                <button className='btn btn-danger' onClick={() => handleEliminar(colaborador.id)}>Eliminar</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
+    </div>
   );
-}
+};
 
 export default Listado;
