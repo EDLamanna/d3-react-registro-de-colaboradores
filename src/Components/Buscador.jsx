@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Buscador= ({ colaboradores, onFiltrar }) => {
+const Buscador = ({ colaboradores, onFilter }) => {
   const [busqueda, setBusqueda] = useState('');
 
   const handleInputChange = (e) => {
@@ -10,18 +10,18 @@ const Buscador= ({ colaboradores, onFiltrar }) => {
     const colaboradoresFiltrados = colaboradores.filter(colaborador =>
       colaborador.nombre.toLowerCase().includes(searchTerm)
     );
-    onFiltrar(colaboradoresFiltrados);
+    onFilter(colaboradoresFiltrados);
   };
 
   return (
     <div className="encabezado">
-    <h1>Lista de colaboradores</h1>
-    <input
-      type="text"
-      placeholder="Busca un colaborador"
-      value={busqueda}
-      onChange={handleInputChange}
-    />
+      <h1>Lista de colaboradores</h1>
+      <input
+        type="text"
+        placeholder="Busca un colaborador"
+        value={busqueda}
+        onChange={handleInputChange}
+      />
     </div>
   );
 }

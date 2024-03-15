@@ -31,7 +31,7 @@ const App = () => {
   return (
     <div className="contenedor">
       <div className="row">
-        <Buscador colaboradores={colaboradores} onFiltrar={handleFiltrarColaboradores} />
+        <Buscador colaboradores={colaboradores} onFilter={handleFiltrarColaboradores} />
       </div>
       <div className="row">
         <div className="col-md-8">
